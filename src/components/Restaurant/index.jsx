@@ -1,29 +1,32 @@
 import React from "react";
 
-import Geprek from "../../assets/images/geprek.png";
-import PecelAyam from "../../assets/images/pecel-ayam.png";
-import NasiGoreng from "../../assets/images/nasi-goreng.png";
-import KopiKenangan from "../../assets/images/kopi-kenangan.png";
+import { Link } from "react-router-dom";
 
-const restaurant = [
+import IMAGES from "@/config/image";
+
+const data = [
   {
+    id: 1,
     name: "Geprek Bensu",
-    img: Geprek,
+    img: IMAGES.GEPREK,
     distance: "0.2 KM",
   },
   {
+    id: 2,
     name: "Pecel Ayam",
-    img: PecelAyam,
+    img: IMAGES.PECEL_AYAM,
     distance: "0.6 KM",
   },
   {
+    id: 3,
     name: "Nasi Goreng",
-    img: NasiGoreng,
+    img: IMAGES.NASI_GORENG,
     distance: "0.7 KM",
   },
   {
+    id: 4,
     name: "Kopi Kenangan",
-    img: KopiKenangan,
+    img: IMAGES.KOPI_KENANGAN,
     distance: "1.2 KM",
   },
 ];
@@ -36,16 +39,19 @@ const Restaurant = () => {
       </h1>
 
       <div className="grid grid-cols-4 gap-4">
-        {restaurant.map((e) => (
+        {data.map((e) => (
           <div
             className="col-span-1 bg-white flex flex-col gap-3 p-3 rounded-lg"
             key={e.name}
           >
             <img src={e.img} alt="img-1" className="w-full h-44 object-cover" />
             <div className="mx-2">
-              <a href="#restaurant" className="font-semibold text-xl mb-1">
+              <Link
+                to={`/restaurant/${e.id}`}
+                className="font-semibold text-xl mb-1"
+              >
                 {e.name}
-              </a>
+              </Link>
               <p>{e.distance}</p>
             </div>
           </div>

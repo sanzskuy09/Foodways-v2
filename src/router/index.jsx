@@ -2,12 +2,11 @@ import { useState } from "react";
 import { Navigate, useRoutes } from "react-router-dom";
 
 import Homepage from "@/pages/Homepage";
-import About from "@/pages/About";
-import Login from "@/pages/Login";
 import Page404 from "@/pages/404";
+import Restaurant from "@/pages/Restaurant";
 
 export default function Routes() {
-  const [user, setUser] = useState();
+  const [user, setUser] = useState(true);
 
   // Router Protected
   function ProtectedRoute({ user, children }) {
@@ -22,12 +21,11 @@ export default function Routes() {
 
   const element = useRoutes([
     { path: "/", element: <Homepage /> },
-    { path: "/login", element: <Login onLogin={setUser} /> },
     {
-      path: "/about",
+      path: "/restaurant/:id",
       element: (
         <ProtectedRoute user={user}>
-          <About />
+          <Restaurant />
         </ProtectedRoute>
       ),
     },

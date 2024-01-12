@@ -31,9 +31,8 @@ body {
 }
 
 .ant-btn-default:hover,
-.ant-btn-default:not(:disabled):not(.ant-btn-disabled):hover.ant-btn,
-.ant-btn-primary:not(:disabled):not(.ant-btn-disabled):hover {
-  /* color: unset; */
+.ant-btn-default:not(:disabled):not(.ant-btn-disabled):hover.ant-btn {
+  /* color: inherit; */
   border: none;
   outline: none;
 }

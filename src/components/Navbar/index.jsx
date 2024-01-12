@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 import LogoImage from "@/assets/icons/logo.svg";
 import ShoppingBasketImage from "@/assets/icons/shopping-basket.svg";
@@ -37,11 +38,13 @@ const Navbar = () => {
     <div className="flex justify-between items-center bg-primary px-16 py-5">
       {/* Logo */}
       <div>
-        <img src={LogoImage} alt="logo" />
+        <Link to="/">
+          <img src={LogoImage} alt="logo" />
+        </Link>
       </div>
 
       {/* user */}
-      <div className={`flex gap-${isLogin ? "8" : "4"} items-center`}>
+      <div className={`flex ${isLogin ? "gap-8" : "gap-4"} items-center`}>
         {!isLogin ? (
           <>
             <button
@@ -61,12 +64,12 @@ const Navbar = () => {
           <>
             <img src={ShoppingBasketImage} alt="Shopping Basket" />
             <img src={ProfileUserImage} alt="Profile User" className="h-12" />
-            <button
+            {/* <button
               className="bg-secondary w-32 h-8 rounded-md text-white font-semibold"
               onClick={handleLogout}
             >
               Logout
-            </button>
+            </button> */}
           </>
         )}
       </div>
