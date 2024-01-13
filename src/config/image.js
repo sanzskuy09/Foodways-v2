@@ -11,6 +11,10 @@ import MieAyamKeju from "../assets/images/mie-ayam-keju.png";
 import MieAyamLeleh from "../assets/images/mie-ayam-leleh.png";
 import MieAyamTelurAsin from "../assets/images/mie-ayam-telur-asin.png";
 
+import DeleteImage from "../assets/images/delete.png";
+import PlusImage from "../assets/images/plus.png";
+import MinusImage from "../assets/images/minus.png";
+
 const images = {
   // Homepage Image
   GEPREK: Geprek,
@@ -26,6 +30,11 @@ const images = {
   MIE_AYAM_KEJU: MieAyamKeju,
   MIE_AYAM_LELEH: MieAyamLeleh,
   MIE_AYAM_TELUR_ASIN: MieAyamTelurAsin,
+
+  // icon
+  TRASH_IAMGE: DeleteImage,
+  PLUS_IAMGE: PlusImage,
+  MINUS_IAMGE: MinusImage,
 };
 
 export default images;

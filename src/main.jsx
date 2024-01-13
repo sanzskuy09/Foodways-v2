@@ -4,7 +4,7 @@ import App from "./App.jsx";
 import "./index.css";
 import "react-toastify/dist/ReactToastify.css";
 
-import store from "./redux/store/index.js";
+import store from "@/redux/store/index.js";
 import { Provider } from "react-redux";
 
 ReactDOM.createRoot(document.getElementById("root")).render(

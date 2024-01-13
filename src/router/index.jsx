@@ -4,6 +4,7 @@ import { Navigate, useRoutes } from "react-router-dom";
 import Homepage from "@/pages/Homepage";
 import Page404 from "@/pages/404";
 import Restaurant from "@/pages/Restaurant";
+import CartOrder from "@/pages/CardOrder";
 
 export default function Routes() {
   const [user, setUser] = useState(true);
@@ -17,8 +18,6 @@ export default function Routes() {
     return children;
   }
 
-  console.log(user);
-
   const element = useRoutes([
     { path: "/", element: <Homepage /> },
     {
@@ -26,6 +25,14 @@ export default function Routes() {
       element: (
         <ProtectedRoute user={user}>
           <Restaurant />
+        </ProtectedRoute>
+      ),
+    },
+    {
+      path: "/restaurant/cart-order",
+      element: (
+        <ProtectedRoute user={user}>
+          <CartOrder />
         </ProtectedRoute>
       ),
     },
